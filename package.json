@@ -1,0 +1,20 @@
+{
+  "name": "ng-gantt-scheduler",
+  "version": "0.0.1",
+  "description": "Angular Gantt Scheduler",
+  "keywords": [
+    "gantt",
+    "scheduler",
+    "angular",
+    "javascript"
+  ],
+  "homepage": "",
+  "peerDependencies": {
+    "@angular/common": "^17.1.0",
+    "@angular/core": "^17.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
