@@ -1,0 +1,34 @@
+<div id="scrollGantt" class="executions-wrapper">
+  <div class="executions-gantt" *ngIf="state.tasks && state.times">
+    <div class="executions-gantt-task-list-wrapper">
+      <app-executions-gantt-task-list
+        [tasks]="state.tasks"
+        [yearSelected]="state.yearSelected"
+        (changeYearSelected)="onChangeYearSelected($event)"
+      ></app-executions-gantt-task-list>
+    </div>
+    <div class="executions-gantt-chart-wrapper">
+      <div class="executions-gantt-chart-wrapper-calendar">
+        <app-executions-gantt-calendar
+          [times]="state.times"
+          [calendar]="state.calendar"
+        ></app-executions-gantt-calendar>
+      </div>
+      <app-executions-gantt-task-chart
+        [tasks]="state.tasks"
+        [times]="state.times"
+        [options]="state.options"
+        *ngIf="state.tasks.length > 0; else emptyTasks"
+      >
+      </app-executions-gantt-task-chart>
+      <ng-template #emptyTasks>
+        <div class="error">
+          <div class="error-image"></div>
+          <div class="error-label">
+            <span> No tasks </span>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

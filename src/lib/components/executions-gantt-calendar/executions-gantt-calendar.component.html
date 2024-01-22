@@ -1,0 +1,12 @@
+<div class="executions-gantt-calendar" [ngStyle]="{ width: times.width + 'px' }" *ngIf="times && calendar">
+  <app-executions-gantt-calendar-row
+    [items]="state.dates.months"
+    [type]="'month'"
+    [viewMonth]="!calendar.day.display"
+    *ngIf="calendar.month.display"></app-executions-gantt-calendar-row>
+  <app-executions-gantt-calendar-row
+    [items]="state.dates.days"
+    [type]="'day'"
+    [viewMonth]="!calendar.day.display"
+    *ngIf="calendar.day.display && state.dates.days.length > 0"></app-executions-gantt-calendar-row>
+</div>

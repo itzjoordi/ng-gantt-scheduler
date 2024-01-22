@@ -1,0 +1,44 @@
+<div class="executions-gantt-task-list">
+  <div class="executions-gantt-task-list-header">
+    <button mat-icon-button (click)="previousYear()">
+      <mat-icon
+        fontIcon="arrow_back_ios"
+        *ngIf="!buttonsLoading.previous"
+      ></mat-icon>
+      <mat-progress-spinner
+        mode="indeterminate"
+        *ngIf="buttonsLoading.previous"
+        class="mat-progress-spinner"
+      ></mat-progress-spinner>
+    </button>
+    <span>{{ yearSelected }}</span>
+    <button mat-icon-button (click)="nextYear()">
+      <mat-icon
+        fontIcon="arrow_forward_ios"
+        *ngIf="!buttonsLoading.next"
+      ></mat-icon>
+      <mat-progress-spinner
+        mode="indeterminate"
+        *ngIf="buttonsLoading.next"
+        class="mat-progress-spinner"
+      ></mat-progress-spinner>
+    </button>
+  </div>
+  <div class="executions-gantt-task-list-item-wrapper">
+    <div
+      class="executions-gantt-task-list-item"
+      [ngStyle]="{
+        'height.px': item.childs
+          ? item.collapsed
+            ? 59
+            : 60 * item.childs.length + 59
+          : 59
+      }"
+      *ngFor="let item of tasks; trackBy: trackByFn"
+    >
+      <app-executions-gantt-task-list-item
+        [task]="item"
+      ></app-executions-gantt-task-list-item>
+    </div>
+  </div>
+</div>

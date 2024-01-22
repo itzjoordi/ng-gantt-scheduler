@@ -1,0 +1,49 @@
+<div class="executions-gantt-task-chart-row" *ngIf="times">
+  <svg
+    class="executions-gantt-task-chart-row-svg"
+    x="0"
+    y="0"
+    [attr.width]="times.width"
+    [attr.height]="getHeight"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g class="highlight-weekend-days">
+      <rect
+        class="chart-days-highlight-rect"
+        *ngFor="let day of weekendDays; trackBy: trackByWeekendDayFn"
+        [attr.x]="day.offset.px"
+        y="0"
+        [attr.width]="day.width.px"
+        fill="#f2f4f8"
+        height="100%"
+      ></rect>
+    </g>
+    <g class="vertical-lines">
+      <line
+        class="grid-line-vertical"
+        *ngFor="let line of verticalLines; trackBy: trackByFn"
+        [attr.x1]="line.x1"
+        [attr.y1]="line.y1"
+        [attr.x2]="line.x2"
+        [attr.y2]="line.y2"
+        [attr.stroke]="line.color"
+      ></line>
+    </g>
+    <g class="tasks-wrapper">
+      <foreignObject
+        x="0"
+        y="0"
+        [attr.width]="times.width"
+        [attr.height]="getHeight"
+        *ngFor="let task of tasks; trackBy: trackByFnTasks"
+      >
+        <app-executions-gantt-task-chart-element
+          [task]="task"
+          [times]="times"
+          [options]="options"
+        >
+        </app-executions-gantt-task-chart-element>
+      </foreignObject>
+    </g>
+  </svg>
+</div>

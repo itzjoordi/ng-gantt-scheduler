@@ -1,0 +1,63 @@
+@import "variables";
+
+.executions-wrapper {
+  font-family: "Open Sans", sans-serif;
+  flex: 1;
+  width: 100%;
+  min-height: 135px;
+  max-height: 95vh;
+  height: 100%;
+  overflow: scroll;
+  .error {
+    position: fixed;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .error-label {
+      color: var(--text04);
+    }
+    .error-image {
+      height: 35px;
+      width: 35px;
+      background-image: url("/assets/nodata.png");
+      background-size: contain;
+      background-repeat: no-repeat, repeat;
+    }
+  }
+}
+
+.executions-gantt {
+  max-height: calc(100% - 10px);
+  display: inline-flex;
+  flex-direction: row;
+
+  .executions-gantt-task-list-wrapper {
+    height: 100%;
+    width: 19rem;
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 9;
+  }
+  .executions-gantt-chart-wrapper {
+    flex: 2;
+    height: 100%;
+    // overflow-x: auto;
+    // overflow-y: hidden;
+    .executions-gantt-chart-wrapper-calendar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
+  }
+  .view-month {
+    .calendar-row {
+      height: 50px;
+    }
+  }
+}

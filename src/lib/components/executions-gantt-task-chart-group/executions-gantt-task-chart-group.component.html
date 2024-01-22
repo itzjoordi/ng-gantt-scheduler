@@ -1,0 +1,30 @@
+<div class="executions-gantt-task-chart-group" *ngIf="times && task">
+  <svg x="0" y="0" [attr.width]="times.width" [attr.height]="height" xmlns="http://www.w3.org/2000/svg">
+    <!-- main line -->
+    <g class="task-main-wrapper">
+      <foreignObject x="0" y="0" [attr.width]="times.width" [attr.height]="60">
+        <div class="executions-gantt-task-chart-wrapper">
+          <div class="executions-gantt-task-chart-item" [ngStyle]="{ 'height.px': 60 }">
+            <app-executions-gantt-task-chart-row [tasks]="mainTasks" [times]="times" [options]="optionsMain">
+            </app-executions-gantt-task-chart-row>
+          </div>
+        </div>
+      </foreignObject>
+    </g>
+
+    <!-- row tasks if not collapsed -->
+    <g class="task-childs-wrapper">
+      <foreignObject x="0" y="60" [attr.width]="times.width" [attr.height]="heightChilds">
+        <div class="executions-gantt-task-chart-wrapper">
+          <div
+            class="executions-gantt-task-chart-item"
+            [ngStyle]="{ 'height.px': 60 }"
+            *ngFor="let taskChld of task.childs; trackBy: trackByFn">
+            <app-executions-gantt-task-chart-row [tasks]="[taskChld]" [times]="times" [options]="options">
+            </app-executions-gantt-task-chart-row>
+          </div>
+        </div>
+      </foreignObject>
+    </g>
+  </svg>
+</div>

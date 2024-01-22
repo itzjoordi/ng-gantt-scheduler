@@ -1,0 +1,60 @@
+<div
+  class="executions-gantt-task-chart"
+  [ngStyle]="{ width: times.width + 'px' }"
+  *ngIf="times"
+>
+  <svg
+    x="0"
+    y="0"
+    [attr.width]="times.width"
+    [attr.height]="totalHeight"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g class="task-wrapper">
+      <foreignObject
+        x="0"
+        y="0"
+        [attr.width]="times.width"
+        [attr.height]="totalHeight"
+      >
+        <div class="executions-gantt-task-chart-wrapper">
+          <div
+            class="executions-gantt-task-chart-item"
+            [ngStyle]="{
+              'height.px': task.childs
+                ? task.collapsed
+                  ? 60
+                  : 60 * task.childs.length + 60
+                : 60
+            }"
+            *ngFor="let task of tasks; trackBy: trackByFn"
+          >
+            <app-executions-gantt-task-chart-row
+              *ngIf="task.childs.length === 0"
+              [tasks]="[task]"
+              [times]="times"
+              [options]="options"
+            >
+            </app-executions-gantt-task-chart-row>
+            <app-executions-gantt-task-chart-group
+              *ngIf="task.childs.length > 0"
+              [task]="task"
+              [times]="times"
+              [options]="options"
+            ></app-executions-gantt-task-chart-group>
+          </div>
+        </div>
+      </foreignObject>
+    </g>
+    <g class="vertical-lines" *ngIf="line">
+      <line
+        class="line-vertical-today"
+        [attr.x1]="line.x1"
+        [attr.y1]="line.y1"
+        [attr.x2]="line.x2"
+        [attr.y2]="line.y2"
+        [attr.stroke]="line.color"
+      ></line>
+    </g>
+  </svg>
+</div>

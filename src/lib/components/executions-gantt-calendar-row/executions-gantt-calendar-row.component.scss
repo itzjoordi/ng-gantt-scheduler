@@ -1,0 +1,50 @@
+.calendar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  .calendar-row-rect {
+    min-height: 1.5rem;
+    border-bottom: 1px solid var(--disabled02);
+    border-right: 1px solid var(--disabled02);
+    display: flex;
+    align-items: center;
+    .calendar-row-rect-child--day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .calendar-row-text {
+      overflow: hidden;
+    }
+    .calendar-row-text--day {
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .weekend {
+      background-color: var(--field02);
+    }
+    .today {
+      background-color: var(--alert);
+      color: var(--field01);
+    }
+    .label-month {
+      padding-left: 0.5rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+.view-month {
+  height: 50px;
+  .calendar-row-rect {
+    height: 100% !important;
+    border-bottom: none;
+    .calendar-row-rect-child--month {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

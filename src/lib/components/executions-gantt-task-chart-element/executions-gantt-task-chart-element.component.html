@@ -1,0 +1,90 @@
+<div class="executions-gantt-task-chart-element" *ngIf="times && task">
+  <svg
+    class="executions-gantt-task-chart-row-svg"
+    [attr.x]="0"
+    y="0"
+    [attr.width]="times.width"
+    [attr.height]="getHeight"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g class="task-wrapper">
+      <foreignObject
+        *ngIf="task.offsetPre"
+        [attr.x]="getOffsetPrevX"
+        [attr.y]="5"
+        [attr.width]="getWidthOffsetPre"
+        [attr.height]="getHeight - 10"
+      >
+        <div
+          class="task-offset task-offset"
+          [ngStyle]="{
+            'border-left': '3px solid ' + task.color,
+            'background-color': task.color + '60'
+          }"
+        >
+          <div [ngClass]="{ 'task-offset-border-left': showBorderLeft }"></div>
+        </div>
+      </foreignObject>
+      <foreignObject
+        [attr.x]="getX"
+        [attr.y]="5"
+        [attr.width]="getWidth"
+        [attr.height]="getHeight - 10"
+        class="task task"
+        [ngStyle]="{ 'background-color': task.color }"
+      >
+        <div
+          class="task-item"
+          [ngClass]="{
+            'task-border-left': showBorderLeftMaster,
+            'task-border-right': showBorderRightMaster
+          }"
+        >
+          <span class="task-item-label">{{ task.label }}</span>
+          <div
+            class="step-tooltip"
+            *ngFor="let item of tooltipSteps; trackBy: trackByFn"
+          ></div>
+          <div class="task-item-acctions" *ngIf="showActions">
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="actionsTask"
+              xPosition="before"
+            >
+              <mat-icon fontIcon="more_vert"></mat-icon>
+            </button>
+            <mat-menu #actionsTask="matMenu">
+              <button mat-menu-item>
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </foreignObject>
+      <foreignObject
+        *ngIf="task.offsetPost"
+        [attr.x]="getOffsetPostX"
+        [attr.y]="5"
+        [attr.width]="getWidthOffsetPost"
+        [attr.height]="getHeight - 10"
+      >
+        <div
+          class="task-offset task-offset"
+          [ngStyle]="{
+            'border-right': '3px solid ' + task.color,
+            'background-color': task.color + '60'
+          }"
+        >
+          <div
+            [ngClass]="{ 'task-offset-border-right': showBorderRight }"
+          ></div>
+        </div>
+      </foreignObject>
+    </g>
+  </svg>
+</div>

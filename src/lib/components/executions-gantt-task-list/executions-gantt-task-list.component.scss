@@ -1,0 +1,49 @@
+.executions-gantt-task-list {
+  width: 100%;
+
+  .executions-gantt-task-list-header {
+    height: 49px;
+    width: 100%;
+    background: var(--field02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border: 1px solid var(--disabled02);
+    border-bottom: 3px solid var(--disabled02);
+
+    .mat-progress-spinner {
+      width: 24px !important;
+      height: 24px !important;
+    }
+  }
+  .executions-gantt-task-list-item-wrapper {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    border-left: 1px solid var(--disabled02);
+
+    .executions-gantt-task-list-item {
+      width: 100%;
+      border-bottom: 1px solid var(--field02);
+      border-right: 1px solid var(--disabled02);
+      background-color: var(--background);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .text-elipsis {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}

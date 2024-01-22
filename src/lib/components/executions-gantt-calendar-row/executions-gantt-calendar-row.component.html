@@ -1,0 +1,28 @@
+<div
+  class="calendar-row executions-gantt-calendar-row-{{ type }}"
+  [ngClass]="{ 'view-month': viewMonth }"
+  *ngIf="items"
+>
+  <div
+    *ngFor="let item of items; trackBy: trackByItemsFn"
+    class="calendar-row-rect calendar-row-rect-{{ type }}"
+    id="{{ item.key }}"
+  >
+    <div
+      class="calendar-row-rect-child--{{ type }}"
+      [ngStyle]="{
+        'width.px': child.width,
+        height: type === 'day' ? '100%' : 'auto'
+      }"
+      [ngClass]="{ weekend: child.isWeekend, today: child.isToday }"
+      *ngFor="let child of item.children; trackBy: trackByCildrenFn"
+    >
+      <div class="calendar-row-text calendar-row-text--{{ type }}">
+        <span *ngIf="type === 'day'">{{ child.label }}</span>
+        <span class="label-month" *ngIf="type === 'month'">{{
+          child.label | date: "LLLL" | titlecase
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.executions-gantt-task-chart-element {
+  .task-wrapper {
+    .tooltip-description {
+      display: flex;
+      flex-direction: column;
+    }
+    .task {
+      background-color: grey;
+    }
+    .task-offset {
+      height: 100%;
+    }
+    .task-item {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+
+      .task-item-label {
+        padding-left: 0.5rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 22px;
+      }
+      .task-item-acctions {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .step-tooltip {
+        flex: 1;
+        height: 100%;
+      }
+    }
+  }
+}

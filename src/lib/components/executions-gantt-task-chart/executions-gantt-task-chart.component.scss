@@ -1,0 +1,14 @@
+.executions-gantt-task-chart {
+  width: 100%;
+  .executions-gantt-task-chart-wrapper {
+    width: 100%;
+    .executions-gantt-task-chart-item {
+      width: 100%;
+      border-right: 1px solid var(--disabled02);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-left: 0.5px;
+    }
+  }
+}

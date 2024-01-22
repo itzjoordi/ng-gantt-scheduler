@@ -1,0 +1,10 @@
+.executions-gantt-calendar {
+  height: 50px;
+  border-bottom: 2px solid var(--disabled02);
+  border-top: 1px solid var(--disabled02);
+  border-left: 1px solid var(--disabled02);
+
+  .calendar-row-year {
+    border-bottom: 2px solid var(--disabled02);
+  }
+}
