@@ -1,17 +1,28 @@
 {
   "name": "ng-gantt-scheduler",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Angular Gantt Scheduler",
   "keywords": [
     "gantt",
     "scheduler",
-    "angular",
-    "javascript"
+    "angular"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/itzjoordi/ng-gantt-scheduler#readme",
+  "bugs": {
+    "url": "https://github.com/itzjoordi/ng-gantt-scheduler/issues",
+    "email": "jordi.s91@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jordi Soler",
+    "email": "jordi.s91@gmail.com",
+    "url": "https://jsbprojects.vercel.app"
+  },
   "peerDependencies": {
     "@angular/common": "^17.1.0",
-    "@angular/core": "^17.1.0"
+    "@angular/core": "^17.1.0",
+    "@angular/material": "^17.1.0",
+    "date-fns": "^3.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

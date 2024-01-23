@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+.executions-wrapper {
+  --jacaranda-50: #fef3ff;
+  --jacaranda-100: #fce7ff;
+  --jacaranda-200: #faceff;
+  --jacaranda-300: #f8a7ff;
+  --jacaranda-400: #f572ff;
+  --jacaranda-500: #ea3df8;
+  --jacaranda-600: #d11ddc;
+  --jacaranda-700: #b214b7;
+  --jacaranda-800: #921395;
+  --jacaranda-900: #79157a;
+  --jacaranda-950: #230023;
+
+  --main: var(--jacaranda-800);
+  --secondary: var(--jacaranda-100);
+  --text-warning: var(--jacaranda-400);
+  --border-box: var(--jacaranda-600);
+  --border-box-light: var(--jacaranda-200);
+  --background: var(--jacaranda-50);
+  --background-today: var(--jacaranda-900);
+  --background-weekend: var(--jacaranda-100);
+
+  --mdc-circular-progress-active-indicator-color: var(--main);
+}

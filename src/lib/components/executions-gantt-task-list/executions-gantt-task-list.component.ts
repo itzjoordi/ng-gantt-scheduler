@@ -89,7 +89,7 @@ export class ExecutionsGanttTaskListComponent
       .subscribe((task: Task) => {
         this.tasks = this.tasks.map((item: Task) => {
           if (item.id === task.id) {
-            return { ...item, collapsed: task.collapsed };
+            return { ...item, collapsed: task.collapsed ?? true };
           }
           return item;
         });

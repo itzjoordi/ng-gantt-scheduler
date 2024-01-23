@@ -22,7 +22,7 @@
             class="executions-gantt-task-chart-item"
             [ngStyle]="{
               'height.px': task.childs
-                ? task.collapsed
+                ? task.collapsed === undefined || task.collapsed
                   ? 60
                   : 60 * task.childs.length + 60
                 : 60

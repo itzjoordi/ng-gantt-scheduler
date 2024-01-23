@@ -1,13 +1,17 @@
-@import "variables";
+@import "./../../assets/variables";
 
 .executions-wrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   flex: 1;
   width: 100%;
   min-height: 135px;
   max-height: 95vh;
   height: 100%;
   overflow: scroll;
+  color: var(--main);
+  border: 2px solid var(--border-box);
+  border-radius: 10px;
+  background: var(--background);
   .error {
     position: fixed;
     margin: 1rem 0;
@@ -17,16 +21,43 @@
     align-items: center;
 
     .error-label {
-      color: var(--text04);
+      color: var(--text-warning);
     }
     .error-image {
       height: 35px;
       width: 35px;
-      background-image: url("/assets/nodata.png");
+      background-image: url("../../assets/nodata.png");
       background-size: contain;
       background-repeat: no-repeat, repeat;
     }
   }
+}
+
+.executions-wrapper::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.executions-wrapper::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.executions-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--jacaranda-900);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 .executions-gantt {
@@ -60,4 +91,12 @@
       height: 50px;
     }
   }
+}
+
+.mat-typography p {
+  margin: 0 !important;
+}
+
+.mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+  display: none !important;
 }

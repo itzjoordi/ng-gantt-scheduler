@@ -1,10 +1,16 @@
 .executions-gantt-task-chart {
   width: 100%;
+  height: calc(100% - 4px);
+  border-right: 1px solid var(--border-box);
+
   .executions-gantt-task-chart-wrapper {
     width: 100%;
+    height: 100%;
+
     .executions-gantt-task-chart-item {
       width: 100%;
-      border-right: 1px solid var(--disabled02);
+      height: 100%;
+      border-right: 1px solid var(--border-box);
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;

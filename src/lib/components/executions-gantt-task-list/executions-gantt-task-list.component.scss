@@ -4,7 +4,7 @@
   .executions-gantt-task-list-header {
     height: 49px;
     width: 100%;
-    background: var(--field02);
+    background: var(--background);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,8 +12,8 @@
     position: sticky;
     top: 0;
     left: 0;
-    border: 1px solid var(--disabled02);
-    border-bottom: 3px solid var(--disabled02);
+    border-right: 1px solid var(--border-box);
+    border-bottom: 3px solid var(--border-box);
 
     .mat-progress-spinner {
       width: 24px !important;
@@ -27,12 +27,12 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    border-left: 1px solid var(--disabled02);
+    //border-left: 1px solid var(--border-box);
 
     .executions-gantt-task-list-item {
       width: 100%;
-      border-bottom: 1px solid var(--field02);
-      border-right: 1px solid var(--disabled02);
+      border-bottom: 1px solid var(--border-box-light);
+      border-right: 1px solid var(--border-box);
       background-color: var(--background);
       white-space: nowrap;
       text-overflow: ellipsis;

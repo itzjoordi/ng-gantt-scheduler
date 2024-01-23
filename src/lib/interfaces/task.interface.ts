@@ -1,5 +1,3 @@
-import { User } from './user';
-
 /**
  * Task
  */
@@ -12,7 +10,6 @@ export interface Task {
   offsetPre?: number;
   offsetPost?: number;
   color?: string;
-  asignedTo?: User;
   collapsed?: boolean;
   childs: Task[];
 }

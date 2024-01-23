@@ -60,13 +60,13 @@ export class ExecutionsGanttTaskChartComponent
       y1: `${0}`,
       x2: `${stepToday.offset.px + pixelToCenter}`,
       y2: `100%`,
-      color: '#C55302',
+      color: 'var(--jacaranda-900)',
     };
   }
 
   get totalHeight(): number {
     return this.tasks.reduce((aggr: number, task: Task) => {
-      if (task.collapsed) {
+      if (task.collapsed === undefined || task.collapsed) {
         return aggr + 60;
       }
       if (!task.childs || task.childs?.length === 0) {
@@ -104,7 +104,7 @@ export class ExecutionsGanttTaskChartComponent
       .subscribe((task: Task) => {
         this.tasks = this.tasks.map((item: Task) => {
           if (item.id === task.id) {
-            return { ...item, collapsed: task.collapsed };
+            return { ...item, collapsed: task.collapsed ?? true };
           }
           return item;
         });

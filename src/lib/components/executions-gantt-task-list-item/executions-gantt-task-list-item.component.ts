@@ -42,6 +42,9 @@ export class ExecutionsGanttTaskListItemComponent {
    * funtions to collapsed
    */
   onCollapsed(): void {
+    if (this.task.collapsed === undefined) {
+      this.task.collapsed = true;
+    }
     this.task = { ...this.task, collapsed: !this.task.collapsed };
     this.executionsHelpersService.setCollapsedTaskObservable(this.task);
   }

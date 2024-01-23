@@ -1,16 +1,16 @@
 <div class="executions-gantt-task-list-item" *ngIf="task">
   <p #label class="text-elipsis">
-    {{ task.description }}
+    {{ task.label }}
   </p>
   <button
-    *ngIf="isGroup && !task.collapsed"
+    *ngIf="isGroup && task.collapsed === false"
     mat-icon-button
     (click)="onCollapsed()"
   >
     <mat-icon fontIcon="expand_less"></mat-icon>
   </button>
   <button
-    *ngIf="isGroup && task.collapsed"
+    *ngIf="isGroup && (task.collapsed === undefined || task.collapsed)"
     mat-icon-button
     (click)="onCollapsed()"
   >

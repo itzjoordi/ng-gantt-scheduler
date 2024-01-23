@@ -57,7 +57,7 @@ export class ExecutionsGanttTaskChartRowComponent implements OnDestroy {
             y1: `${0}`,
             x2: `${step.offset.px}`,
             y2: `100%`,
-            color: '#d5d9e0',
+            color: 'var(--jacaranda-400)',
           };
           return [...aggr, output];
         }

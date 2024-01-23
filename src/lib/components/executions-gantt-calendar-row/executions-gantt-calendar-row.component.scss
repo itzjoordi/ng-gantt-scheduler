@@ -4,8 +4,8 @@
   justify-content: flex-start;
   .calendar-row-rect {
     min-height: 1.5rem;
-    border-bottom: 1px solid var(--disabled02);
-    border-right: 1px solid var(--disabled02);
+    border-bottom: 1px solid var(--border-box);
+    border-right: 1px solid var(--border-box);
     display: flex;
     align-items: center;
     .calendar-row-rect-child--day {
@@ -22,11 +22,11 @@
       overflow: hidden;
     }
     .weekend {
-      background-color: var(--field02);
+      background-color: var(--background-weekend);
     }
     .today {
-      background-color: var(--alert);
-      color: var(--field01);
+      background-color: var(--background-today);
+      color: var(--secondary);
     }
     .label-month {
       padding-left: 0.5rem;

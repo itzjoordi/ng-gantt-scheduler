@@ -29,7 +29,7 @@
       class="executions-gantt-task-list-item"
       [ngStyle]="{
         'height.px': item.childs
-          ? item.collapsed
+          ? item.collapsed === undefined || item.collapsed
             ? 59
             : 60 * item.childs.length + 59
           : 59

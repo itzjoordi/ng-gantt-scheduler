@@ -27,7 +27,9 @@ export class ExecutionsGanttTaskChartGroupComponent {
   }
 
   get height(): number {
-    return this.task.collapsed ? 60 : 60 * this.task.childs?.length + 60;
+    return this.task.collapsed === undefined || this.task.collapsed
+      ? 60
+      : 60 * this.task.childs?.length + 60;
   }
 
   get heightChilds(): number {

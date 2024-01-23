@@ -40,7 +40,7 @@
             'task-border-right': showBorderRightMaster
           }"
         >
-          <span class="task-item-label">{{ task.label }}</span>
+          <span class="task-item-label">{{ task.description }}</span>
           <div
             class="step-tooltip"
             *ngFor="let item of tooltipSteps; trackBy: trackByFn"

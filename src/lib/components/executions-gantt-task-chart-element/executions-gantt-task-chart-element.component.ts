@@ -39,7 +39,9 @@ export class ExecutionsGanttTaskChartElementComponent implements OnDestroy {
 
   get getHeight(): number {
     if (this.task.childs.length > 0) {
-      return this.task.collapsed ? 60 : 60 * this.task.childs.length;
+      return this.task.collapsed === undefined || this.task.collapsed
+        ? 60
+        : 60 * this.task.childs?.length + 60;
     }
     return 60;
   }
