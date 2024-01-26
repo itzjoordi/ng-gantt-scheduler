@@ -49,8 +49,8 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Example
 
-You can check an example on the [Stackblitz](https://stackblitz.com/edit/stackblitz-starters-ehwvkj?file=src%2Fapp%2Fapp.component.html).
+You can check an example on [Stackblitz](https://stackblitz.com/edit/gantt-scheduler).
 
 ## Help
 
-To get more help on Angular Gantt Schedule contact me.
+To get more help on Angular Gantt Schedule contact us.
